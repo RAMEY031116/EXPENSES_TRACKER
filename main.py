@@ -49,7 +49,7 @@ clear()
 print(f"The Total Ammount you have spent on {date.today()} is {Amount} ")
 
 
-
+#test
 
 
 

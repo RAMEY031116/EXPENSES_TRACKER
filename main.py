@@ -51,9 +51,13 @@ Shop.append(shop_name)
 Amount.append(money)
 
 
+<<<<<<< HEAD
 print (f"The Total Ammount you have spent on {date.today()} is {Amount}  /n")
 
 print(f"Please choose from the following :)")
+=======
+#test
+>>>>>>> a14538c59f486fcca32068ed0b317806c1afc12b
 
 while True:
   mode = input(f"If you would like to add then type (add) \n"

@@ -4,10 +4,10 @@ import csv
 import os
 from datetime import date
 from header import logo
-import function
+
 
 def today():
-  print(date.today())
+  return date.today()
 
 
 def header():
@@ -16,13 +16,18 @@ def header():
 
 def clear():
   os.system("clear")
-  print(header())
+  return header()
 
 def add():
-  pass
+  with open("expenses.csv", "w")as f:
+    writer = csv.writer(f)
+
 
 def view():
-  pass
+  with open("expenses.csv", "r")as f:
+    csv_reader = csv.reader(f)
+
+
 
 header()
 
@@ -33,24 +38,37 @@ Travel = []
 Amount = []
 
 
-name = input ("Please enter your name : ")
+name = input (f"Please enter your name : ")
 shop_name = input(f"Please enter a shop name : ")
-food = input ("please enter an ammount: ")
-car = input("please enter an ammount for Petrol : ")
+food = float(input (f"please enter an ammount: "))
+car = float(input(f"please enter an ammount for Petrol : "))
 
-money = int(food) + int(car)
+money = food + car
+
 Groceries.append(food)
 Travel.append(car)
 Shop.append(shop_name)
 Amount.append(money)
 
-clear()
 
-print(f"The Total Ammount you have spent on {date.today()} is {Amount} ")
+print (f"The Total Ammount you have spent on {date.today()} is {Amount}  /n")
 
+print(f"Please choose from the following :)")
 
+while True:
+  mode = input(f"If you would like to add then type (add) \n"
+  "if you would like to view your transaction then type (view) \n"
+  "If you would like to quit then type (quit) \n" 
+  "Enter Your mode : ").lower()
 
-
-
+  if mode == "q":
+    print(f"HAVE A BEAUTIFUL DAY !!")
+    exit()
+  elif mode == "add":
+    add()
+  elif mode == "view":
+    view()
+  else :
+    continue
 
 

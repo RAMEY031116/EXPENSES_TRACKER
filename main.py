@@ -27,24 +27,25 @@ def search():
     if date == row[0]:
       print(row)
 
+def add():
+  name = input (f"Please enter your name : ")
+  shop_name = input(f"Please enter a shop name : ")
+  food = float(input (f"Please enter an amount: "))
+  car = float(input (f"please enter an ammount for Petrol : "))
+  total_amount = food+car
+  return name,shop_name,food,car,total_amount
+  
+ 
 
+def save(name,shop_name,food,car,total_amount):
 
-
-def add_expenses():
+  print (f"The Total Ammount you have spent on {today()} is {str(total_amount)}\n")
 
   names = []
   shop = []
   groceries = []
   travel = []
   amount = []
-
-
-  name = input (f"Please enter your name : ")
-  shop_name = input(f"Please enter a shop name : ")
-  food = float(input (f"Please enter an amount: "))
-  car = float(input (f"please enter an ammount for Petrol : "))
-  total_amount = food+car
-  
 
   groceries.append(food)
   travel.append(car)
@@ -69,6 +70,7 @@ def view():
     
     for row in reader:
       print(row)
+    
 
 
 header()
@@ -83,7 +85,7 @@ while True:
   if mode_first == "0":
     search()
   elif mode_first == "1":
-    add_expenses()
+    name,shop_name,food,car,total_amount = add()
   elif mode_first == "2":
     view()
   else:
@@ -98,7 +100,7 @@ while True:
     print(f"HAVE A BEAUTIFUL DAY !!")
     exit()
   elif mode_second == "1":
-    add_expenses()
+    save(name,shop_name,food,car,total_amount)
   elif mode_second== "2":
     view()
   else :

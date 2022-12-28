@@ -1,5 +1,5 @@
 #THIS IS A EXPENSES TRACKER PYTHON APPLICATION FOR RASBERRY PI PROJECT !!!!!
-from backend import add, save, clear, search, view
+from backend import add, save, clear, search, view, delete
 from headers import logo
 print(logo)
 
@@ -28,6 +28,7 @@ while True:
   mode_second= input ("\n""[1] To save your transaction then press 1 \n"
   "[2] To view your transaction then press 2 \n"
   "[3] To quit press 3 \n" 
+  "[4] To delete your entire file enter 100 \n"
   "Enter Your mode : ").lower()
   clear()
   if mode_second == "3":
@@ -35,6 +36,10 @@ while True:
     exit()
   elif mode_second == "1":
     save(name,shop_name,food,car,total_amount)
+  elif mode_second == "100":
+    sure = input(f"are you sure (yes/no) :")
+    if sure == "yes":
+      delete() 
   elif mode_second== "2":
     view()
   else :

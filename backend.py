@@ -65,3 +65,11 @@ def view():
     except FileNotFoundError:
         print(f"This file doesnot exists so please add your transaction and save to create a new file :")
 
+
+def delete():
+  if os.path.exists("expenses.csv"):
+    os.remove("expenses.csv")
+    print(f"YOUR FILE HAS BEEN SUCESSFULLY DELETED")
+  else:
+    print("The file does not exist") 
+

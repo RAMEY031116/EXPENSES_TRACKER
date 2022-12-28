@@ -9,9 +9,8 @@ while True:
   clear()
   print(logo)
   print(f"\n Please choose from the following :)" "\n")
-  mode_first = input(f"[0] If you would like to search then press 0 \n"
-  "[1]If you would like to add your transaction then press 1 \n"
-  "[2] If you woule like to view your transaction then press 2 \n"
+  mode_first = input(f"[0] To search file then press 0 \n"
+  "[1]To add your transaction then press 1 \n"
   "Enter your mode: ").lower()
   if mode_first == "0":
 
@@ -25,10 +24,10 @@ while True:
     print(logo)
     view()
   else:
-    continue
-  mode_second= input ("\n""[1] If you would like to save your transaction then press 1 \n"
-  "[2] if you would like to view your transaction then press 2 \n"
-  "[3] If you would like to quit press 3 \n" 
+    pass
+  mode_second= input ("\n""[1] To save your transaction then press 1 \n"
+  "[2] To view your transaction then press 2 \n"
+  "[3] To quit press 3 \n" 
   "Enter Your mode : ").lower()
   clear()
   if mode_second == "3":
